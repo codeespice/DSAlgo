@@ -3,7 +3,7 @@ package com.g.prepare.tree;
 
 
 public class MyBinaryTree {
-  private Node root ;
+  public Node root ;
 
   public Node insert(int element)
   {
@@ -108,5 +108,59 @@ public class MyBinaryTree {
 
 
     }
+/*
+On each iteration lower and upper bounds of current subtree can be stored.
+If we want to check subtree with root x, and bounds for the subtree are l and h,
+then all we need is to check that l <= x <= h and to check the left subtree with bounds l and x,
+and the right one with bounds x and h.
+ */
+    public boolean isValidBST(Node root)
+    {
+        //lower bound is -infinity and upperbound is -infinity
+        return isValidBST(root,Integer.MIN_VALUE,Integer.MAX_VALUE);
 
+
+    }
+    public boolean isValidBST(Node node,int lowerBound,int upperBound)
+    {
+        if(node==null)
+        {
+            return true;
+
+        }
+
+        return (node.element>lowerBound && node.element<upperBound) &&  //check if current element is in the range of lowerbound and upperbound
+                isValidBST(node.leftNode,lowerBound,node.element) && //for left tree lower bound is previous bound and uppder bound is current element
+                isValidBST(node.rightNode,node.element,upperBound); //for right node lowerbound is current node value and upperbound is previous upper bound
+
+
+
+
+
+    }
+
+    public int heightOfBinaryTree()
+    {
+        if(root==null)
+        {
+            return 0;
+        }
+        return heightOfBinaryTree(root,1);
+    }
+
+    private int heightOfBinaryTree(Node currentNode,int currentHeight)
+    {
+        if(currentNode==null)
+        {
+            return currentHeight;
+        }
+        if(currentNode!=null)
+        {
+
+           int leftHeight = heightOfBinaryTree(currentNode.leftNode,currentHeight+1);
+            int rightHeight = heightOfBinaryTree(currentNode.rightNode,currentHeight+1);
+            return leftHeight>rightHeight?leftHeight:rightHeight;
+        }
+        return currentHeight;
+    }
 }

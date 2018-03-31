@@ -1,5 +1,7 @@
 package com.g.prepare.hash;
 
+import java.util.LinkedList;
+
 public class Entry {
 
     Employee key;
@@ -33,5 +35,6 @@ public class Entry {
     public void setNext(Entry next) {
         this.next = next;
     }
+
 }
 
