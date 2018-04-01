@@ -6,10 +6,10 @@ public class DynamicArray<T> {
 
     Object[] arrayObject;
     int size;
-    public DynamicArray()
+    public DynamicArray(int initialSize)
     {
         size=0;
-        arrayObject = new Object[1];
+        arrayObject = new Object[initialSize];
     }
     public T getElement(int index)
     {
@@ -33,19 +33,27 @@ public class DynamicArray<T> {
                 newCapacity= minimumCapacity;
             }
             arrayObject= Arrays.copyOf(arrayObject,newCapacity);
-
+            System.out.println("Current size is "+ size);
             System.out.println("resize Happend and new Capacity is "+ newCapacity);
-            System.out.println("size is "+ size);
+
         }
     }
 
     public static void main(String[] args)
     {
 
-        DynamicArray<Integer> dynamicArray= new DynamicArray<>();
+        DynamicArray<Integer> dynamicArray= new DynamicArray<>(2);
         dynamicArray.putElement(2);
         dynamicArray.putElement(3);
         dynamicArray.putElement(4);
+        dynamicArray.putElement(5);
+        dynamicArray.putElement(6);
+        dynamicArray.putElement(8);
+        dynamicArray.putElement(9);
+        dynamicArray.putElement(10);
+        dynamicArray.putElement(12);
+        dynamicArray.putElement(14);
+
     }
 
 }
