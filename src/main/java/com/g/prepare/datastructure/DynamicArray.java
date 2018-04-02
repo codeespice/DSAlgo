@@ -1,4 +1,4 @@
-package com.g.prepare.arrays;
+package com.g.prepare.datastructure;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package com.g.prepare.arrays;
+package com.g.prepare.datastructure;
 /*
 this class prints diagonal, first half of diagonal,second half of diagonal
  */

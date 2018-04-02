@@ -28,7 +28,7 @@ public class Anagram {
         {
             for(int j=0;j<secondChars.length;j++)
             {
-                /*Compare the arrays, after comparison mark both the
+                /*Compare the datastructure, after comparison mark both the
                 characters as '!'
                 */
                 if(firstChars[i]==secondChars[j])
