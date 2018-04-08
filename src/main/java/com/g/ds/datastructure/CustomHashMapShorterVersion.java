@@ -2,7 +2,7 @@ package com.g.ds.datastructure;
 
 public class CustomHashMapShorterVersion<K,V> {
 
-    int size;
+    int size=10;
     public CustomHashMapShorterVersion()
     {
         size=10;
@@ -24,6 +24,7 @@ public class CustomHashMapShorterVersion<K,V> {
     public void put(K key,V value)
     {
         int hash = getIndex(key);
+        //System.out.println("hash ="+hash);
         Entry entry = entrees[hash];
         // if no element create a element and place the element in array
         if(entry ==null)
@@ -71,8 +72,10 @@ public class CustomHashMapShorterVersion<K,V> {
        if(entry!=null)
         {
             Entry currentEntry = entry;
-            while(currentEntry.next!=null)
+            //loop through the linked list
+            while(currentEntry!=null)
             {
+                //if found return the value
                 if(currentEntry.key.equals(key))
                 {
                    return (V)currentEntry.value;
@@ -82,13 +85,57 @@ public class CustomHashMapShorterVersion<K,V> {
         }
         return null;
     }
-    public int getIndex(K key)
+    public void deleteValue(K key)
+    {
+        int hash = getIndex(key);
+        Entry entry = entrees[hash];
+
+        if(entry!=null)
+        {
+            Entry currentEntry = entry;
+            Entry previous=null;
+            //loop through the linked list
+            while(currentEntry!=null)
+            {
+                //if found return the value
+                if(currentEntry.key.equals(key))
+                {
+                    //if  first element
+                    if(previous==null)
+                    {
+                        entrees[hash] =currentEntry.next;
+
+                    }
+                    else
+                    {
+                        previous.next=currentEntry.next;
+                    }
+                }
+                currentEntry = currentEntry.next;
+            }
+        }
+
+    }
+    private int getIndex(K key)
     {
        return key.hashCode()%size;
     }
 
     public static void main(String[] args)
     {
+        CustomHashMapShorterVersion<String,String> hashMap = new CustomHashMapShorterVersion<String,String>();
+        hashMap.put("one","find me one");
+        hashMap.put("two","find me two");
+        hashMap.put("one","find me infinity");
+
+        hashMap.put("three","find me three");
+        hashMap.put("four","find me four");
+        hashMap.deleteValue("one");
+
+        System.out.println(hashMap.getValue("one"));
+        System.out.println(hashMap.getValue("two"));
+        System.out.println(hashMap.getValue("three"));
+        System.out.println(hashMap.getValue("four"));
 
     }
 }
