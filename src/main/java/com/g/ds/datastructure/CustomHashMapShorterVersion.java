@@ -97,7 +97,7 @@ public class CustomHashMapShorterVersion<K,V> {
             //loop through the linked list
             while(currentEntry!=null)
             {
-                //if found return the value
+                //if found
                 if(currentEntry.key.equals(key))
                 {
                     //if  first element
@@ -106,6 +106,7 @@ public class CustomHashMapShorterVersion<K,V> {
                         entrees[hash] =currentEntry.next;
 
                     }
+                    //if element is not the first element
                     else
                     {
                         previous.next=currentEntry.next;
