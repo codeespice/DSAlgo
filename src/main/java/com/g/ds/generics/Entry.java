@@ -1,4 +1,4 @@
-package com.g.prepare.generics;
+package com.g.ds.generics;
 
 public class Entry<K,V> {
 

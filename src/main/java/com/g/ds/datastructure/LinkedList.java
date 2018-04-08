@@ -1,4 +1,4 @@
-package com.g.prepare.datastructure;
+package com.g.ds.datastructure;
 
 public class LinkedList<T> {
 

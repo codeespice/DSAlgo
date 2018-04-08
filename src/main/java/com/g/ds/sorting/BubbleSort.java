@@ -1,4 +1,4 @@
-package com.g.prepare.sorting;
+package com.g.ds.sorting;
 /*
 We can create a java program to sort array elements using bubble sort. Bubble sort algorithm is known as the simplest sorting algorithm.
 

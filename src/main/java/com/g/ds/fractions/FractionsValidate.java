@@ -1,4 +1,4 @@
-package com.g.prepare.fractions;
+package com.g.ds.fractions;
 
 public class FractionsValidate {
     public static void main(String args[])

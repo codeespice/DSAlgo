@@ -1,4 +1,4 @@
-package com.g.prepare.tree;
+package com.g.ds.tree;
 
 public class MyBinaryTreeTest {
     public static void main(String args[])

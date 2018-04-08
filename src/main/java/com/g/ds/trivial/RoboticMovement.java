@@ -1,4 +1,4 @@
-package com.g.prepare.trivial;
+package com.g.ds.trivial;
 
 public class RoboticMovement {
 

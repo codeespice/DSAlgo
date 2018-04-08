@@ -1,4 +1,4 @@
-package com.g.prepare.sorting;
+package com.g.ds.sorting;
 
 public class QuickSort {
     int low;
