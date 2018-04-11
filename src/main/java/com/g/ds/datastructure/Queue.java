@@ -3,6 +3,7 @@ package com.g.ds.datastructure;
 public class Queue<T> {
 
     Node front;
+    Node rear;
 
     public Queue()
     {
@@ -11,27 +12,33 @@ public class Queue<T> {
     static class Node<T>{
         T value;
         Node next;
+        Node previous;
 
         public Node(T value)
         {
             this.value=value;
             this.next=null;
+            this.previous=null;
         }
     }
-
+//add at the end of the quque
     public void enQueue(T value)
     {
-
+        Node newNode=new Node(value);
         //add element always at the start
         if(front==null)
         {
-            front=new Node(value);
+
+            front=newNode;
+            rear=newNode;
         }
         else
         {
-            Node currentNode = new Node(value);
-            currentNode.next=front;
-            front=currentNode;
+            //adding at rear  and move the rear to current element
+
+            newNode.previous=rear;
+            rear.next = newNode;
+            rear=newNode;
         }
 
     }
@@ -39,32 +46,23 @@ public class Queue<T> {
 
     public T deQueue()
     {
-
-        if(front==null) {
+        //look if quque is empty
+        if(front==null || rear==null) {
             System.out.println("Queue is empty");
             return null;
         }
-        Node currentNode = front;
-        Node previousNode = null;
-        //look for the last element
-        while(currentNode.next!=null)
-        {
-            previousNode =currentNode;
-            currentNode=currentNode.next;
+        //if not empty remove the element from front
+        T value =(T)front.value;
+        front = front.next;
+        //if reached end check for null
+        if(front!=null) {
+
+            front.previous = null;
         }
-        T value = (T) currentNode.value;
-        /*if there is only one element remove the element and set to null
-        if there are more elements set the previous element next reference to null since
-        we are removing the elemnts
-        */
-        if(previousNode!=null)
-        {
-            previousNode.next=null;
-        }
-        else
-        {
-            front=null;
-        }
+
+
+
+
         return value;
 
 
