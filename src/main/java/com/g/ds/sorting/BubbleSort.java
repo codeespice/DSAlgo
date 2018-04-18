@@ -3,6 +3,13 @@ package com.g.ds.sorting;
 We can create a java program to sort array elements using bubble sort. Bubble sort algorithm is known as the simplest sorting algorithm.
 
 In bubble sort algorithm, array is traversed from first element to last element. Here, current element is compared with the next element. If current element is greater than the next element, it is swapped.
+
+In Selection Sort always get the minimum from the remaining list and replace the top element with minimum element
+
+Same with insertion sort
+
+for all the algorithms time complexity is O(n^2) and space complexity is O(1)
+
  */
 public class BubbleSort {
 

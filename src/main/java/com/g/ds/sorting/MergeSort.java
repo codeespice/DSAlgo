@@ -1,5 +1,10 @@
 package com.g.ds.sorting;
 
+/*
+divide and conquer approach
+divide half and half and sort them and merge
+
+ */
 public class MergeSort {
 
     int[] array;

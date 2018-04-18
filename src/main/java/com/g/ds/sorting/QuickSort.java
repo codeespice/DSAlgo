@@ -1,5 +1,11 @@
 package com.g.ds.sorting;
+/*
+1.find the pivot element
+2.devide left array and devide right array
+3. arrange such that all the left elements are less than pivot and right side elements are greater than pivot elements
+4.Do the same process for left section and right section
 
+ */
 public class QuickSort {
     int low;
     int high;
