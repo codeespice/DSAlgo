@@ -5,6 +5,9 @@ import java.util.Stack;
 
 /*
 1.Graph is stored using adjeceny list
+2.Visit the first node and the nodes linked to it
+if you hit the node linked to it then go the Node and traverse the list attached to Node
+and proceed subsequently.
  */
 public class DepthFirstSearch {
 
@@ -47,6 +50,7 @@ public class DepthFirstSearch {
         }
         /*
         do the depth first traverse
+        maintain the visited node
          */
         public void explore(int startIndex)
         {

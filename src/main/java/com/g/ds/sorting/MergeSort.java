@@ -22,6 +22,8 @@ public class MergeSort {
 
         if(array==null|| array.length==0)
         {
+
+
             return;
         }
         mergeSort(0,array.length-1);
