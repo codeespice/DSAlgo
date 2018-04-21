@@ -65,38 +65,42 @@ public class Anagram {
     public boolean inAnagramSecond(String firstString,String secondString)
     {
         int MAX_SIZE=256;
+        //validate not null condition
         if(firstString==null ||  secondString==null)
         {
             return false;
         }
         char[] firstChars = firstString.toLowerCase().replaceAll("\\s","").toCharArray();
         char[] secondChars = secondString.toLowerCase().replaceAll("\\s","").toCharArray();
+       //Validate length condition
         if(firstChars.length!=secondChars.length)
         {
             return false;
         }
         int[] compare =  new int[MAX_SIZE];
-
+        //Store the characters array with Count
         for(int i=0;i<firstChars.length;i++)
         {
             int val =(int) firstChars[i];
             compare[val]++;
 
         }
+
+        /*reduce the count of the previously found characters
+        if there are diff characters then count reductiion would lead to -1
+         */
         for(int i=0;i<secondChars.length;i++)
         {
-            int val =(int) firstChars[i];
+            int val =(int) secondChars[i];
             compare[val]--;
-
-        }
-
-        for(int i=0;i<MAX_SIZE;i++)
-        {
-            if(compare[i]>0)
+            if(compare[val]<0)
             {
                 return false;
             }
+
         }
+
+
         return true;
 
     }
