@@ -7,7 +7,9 @@ import java.util.*;
 Intuition
 
 Two strings are anagrams if and only if their sorted strings are equal.
-
+store the anagramlist in hasmap with the key ad anagram itself
+when you encounter match update the list or else create a new list
+sort the list based on the size of the arraylist
 
  */
 public class GroupAnagram {
