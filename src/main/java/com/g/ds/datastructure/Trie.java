@@ -20,6 +20,14 @@ public class Trie {
 
     /**
      * Iterative implementation of insert into trie
+
+     traverse each node and see if character exists ,
+     if not create a trie node and add the character to the map and also trie node
+     move on to the next character
+     at the end mark the end of the word by setting the end of word to true
+
+
+
      */
     public void insert(String word) {
         TrieNode current = root;
@@ -63,6 +71,13 @@ public class Trie {
 
     /**
      * Iterative implementation of search into trie.
+     traverse each node and see if character exists ,
+     if char does not exist then we cannot proceed further as word does not exist
+     continue traversing the nodes as long as character exist
+     the end of the node should have the end of word as true
+
+
+
      */
     public boolean search(String word) {
         TrieNode current = root;
