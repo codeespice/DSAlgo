@@ -1,5 +1,8 @@
 package com.g.ds.trivial;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class FibinocciNumbers {
 
     //Classic recursion Example
@@ -58,7 +61,36 @@ fib(1) fib(0)
         }
 
     }
-
+static class FibinocciRecursive
+    {
+        Map<Integer,Integer> map = new HashMap<>();
+        public int fibinocciRecursive(int number)
+        {
+            return fibR(number);
+        }
+        public int fibR(int n)
+        {
+            if(map.containsKey(n))
+            {
+                System.out.println("map is used for number::"+n);
+                return map.get(n);
+            }
+            if(n<=0)
+            {
+                return 0;
+            }
+            if(n==1)
+            {
+                return 1;
+            }
+            int val = fibR(n-1)+fibR(n-2);
+            if(!map.containsKey(n))
+            {
+                map.put(n,val);
+            }
+            return val;
+        }
+    }
     public static void main(String[] args)
     {
         FibinocciRecursion fr = new FibinocciRecursion();
@@ -66,6 +98,10 @@ fib(1) fib(0)
 
         FibinocciDynamicProgramming fd = new FibinocciDynamicProgramming();
         System.out.println("Dynamic Programming:"+ fd.fibinocci(4));
+        FibinocciRecursive fm = new FibinocciRecursive();
+        System.out.println("Recursive Programming:"+ fm.fibinocciRecursive(4));
+
+
 
     }
 }
