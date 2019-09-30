@@ -5,9 +5,18 @@ import java.util.Stack;
 
 /*
 1.Graph is stored using adjeceny list
-2.Visit the first node and the nodes linked to it
+2.adjeceny list is nothing but array of Linked list (each linked list corresponds to one src)
+3.Visit the first node and the nodes linked to it
 if you hit the node linked to it then go the Node and traverse the list attached to Node
 and proceed subsequently.
+
+eg Graph
+0->1,2
+1->0,3,4
+2->0,5
+3->1
+4->1
+5->2
  */
 public class DepthFirstSearch {
 
@@ -48,6 +57,29 @@ public class DepthFirstSearch {
             node.next = adjList[src].head;
             adjList[src].head =node;
         }
+        /*
+        print utility for graph...not significant other than printing
+         */
+        public void printGraph()
+        {
+            for( int i=0;i<size; i++)
+            {
+                System.out.print(i+"->");
+                Node node = adjList[i].head;
+                while(node!=null)
+                {
+                    System.out.print(node.value);
+                    if(node.next!=null)
+                    {
+                        System.out.print(",");
+                    }
+                    node=node.next;
+                }
+                System.out.println(" ");
+            }
+
+        }
+
         /*
         do the depth first traverse
         maintain the visited node
@@ -107,6 +139,7 @@ public class DepthFirstSearch {
 
         dfsGraph.addNode(2,0);
         dfsGraph.addNode(5,2);
+       // dfsGraph.printGraph();
         dfsGraph.explore(0);
 
     }

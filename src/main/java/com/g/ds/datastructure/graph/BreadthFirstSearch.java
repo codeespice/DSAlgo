@@ -44,6 +44,28 @@ public class BreadthFirstSearch {
             adjList[src].head =node;
         }
         /*
+      print utility for graph...not significant other than printing
+       */
+        public void printGraph()
+        {
+            for( int i=0;i<size; i++)
+            {
+                System.out.print(i+"->");
+               Node node = adjList[i].head;
+                while(node!=null)
+                {
+                    System.out.print(node.value);
+                    if(node.next!=null)
+                    {
+                        System.out.print(",");
+                    }
+                    node=node.next;
+                }
+                System.out.println(" ");
+            }
+
+        }
+        /*
         do the depth first traverse
         maintain the visited node
          */
@@ -98,6 +120,7 @@ public class BreadthFirstSearch {
 
         bfsGraph.addNode(2,0);
         bfsGraph.addNode(5,2);
-        bfsGraph.explore(0);
+        bfsGraph.printGraph();
+        //bfsGraph.explore(0);
     }
 }
