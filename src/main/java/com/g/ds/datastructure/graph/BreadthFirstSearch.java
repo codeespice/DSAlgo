@@ -3,7 +3,21 @@ package com.g.ds.datastructure.graph;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
+/*
+1.Graph is stored using adjeceny list
+2.adjeceny list is nothing but array of Linked list (each linked list corresponds to one src)
+3.Visit the first node and the nodes linked to it
+if you hit the node linked add the node to the queue and continue traversing
+and proceed subsequently.
 
+eg Graph
+0->1,2
+1->0,3,4
+2->0,5
+3->1
+4->1
+5->2
+ */
 public class BreadthFirstSearch {
     static class Node
     {
