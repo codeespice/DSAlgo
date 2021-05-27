@@ -1,4 +1,11 @@
 package com.g.ds.trivial;
+
+//Reference https://leetcode.com/problems/invert-binary-tree/
+/*
+test case
+Input: root = [4,2,7,1,3,6,9]
+Output: [4,7,2,9,6,3,1]
+ */
 class TreeNode {
       int val;
       TreeNode left;
@@ -22,9 +29,11 @@ public class InvertTree {
         if(node == null){
             return node;
         }
+        //temporary copy
         temp = node.left;
+        //assign left node to rotated right node
         node.left = invertNode(node.right) ;
-
+        //assign right node to rotated left node
         node.right = invertNode(temp);
         return node;
 
