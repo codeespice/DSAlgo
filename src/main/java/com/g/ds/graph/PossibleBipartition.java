@@ -37,6 +37,8 @@ public class PossibleBipartition {
             map.get(dislikePair[0]-1).add(dislikePair[1]-1);
             map.get(dislikePair[1]-1).add(dislikePair[0]-1);
         }
+
+
         //create visited array where 0= unvisited 1= groupA, -1=groupB
         int[] visited = new int[N];
         //attempts dfs

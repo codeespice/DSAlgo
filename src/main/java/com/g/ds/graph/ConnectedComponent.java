@@ -18,7 +18,7 @@ steps:
  */
 public class ConnectedComponent {
     public int countComponents(int n,int[][] edges){
-        //initialize djacency list for graph
+        //initialize adjacency list for graph
         HashMap<Integer, List<Integer>> adj = new HashMap<>();
         //assign objects
         for(int i=0;i<n;i++){
