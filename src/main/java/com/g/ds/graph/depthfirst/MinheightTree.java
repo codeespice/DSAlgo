@@ -1,4 +1,4 @@
-package com.g.ds.graph;
+package com.g.ds.graph.depthfirst;
 
 import java.util.*;
 /*

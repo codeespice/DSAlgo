@@ -1,6 +1,5 @@
-package com.g.ds.graph;
+package com.g.ds.graph.depthfirst;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
